@@ -53,4 +53,35 @@ namespace AdvancedCSharp
         // in a TProduct you'll have access to all of its 
         // properties and methods using dot notation
     }
+
+
+    // struct lets value types become nullable
+    public class Nullable<T> where T : struct
+    {
+        private object _value;
+        public Nullable()
+        {
+        }
+
+        public Nullable(T value)
+        {
+            _value = value;
+        }
+
+        public bool HasValue
+        {
+            get { return _value != null; }
+        }
+        public T GetValueOrDefault()
+        {
+            if (HasValue)
+            {
+                return (T)_value;
+            }
+            return default(T);
+        }
+
+        // Nullable is a structure already built-in the C# languafe 
+    }
+
 }
