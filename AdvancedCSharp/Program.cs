@@ -17,9 +17,28 @@ namespace AdvancedCSharp
             Func<int, int> square = number => number * number;
 
             Console.WriteLine(square(5));
-            Console.ReadKey();
-            
+            //Console.ReadLine();
+
+
+            // without any arguments... 
+            // () => ...
+            // one argument
+            // x => ...
+            // multiple arguments 
+            // (x, y, z) => ...
+
+            // Lambda Expressions can understand 
+            // any variable within the scope it is called
+            // as well as the variable that is passed to it
+
+            const int factor = 5;
+
+            Func<int, int> multiplier = n => n * factor;
+            var result = multiplier(10);
+            Console.WriteLine(result);
+            Console.ReadLine();
         }
+
         static int Square(int number)
         {
             return number*number;
