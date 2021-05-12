@@ -12,7 +12,11 @@ namespace AdvancedCSharp
         {
             var books = new BookRepository().GetBooks();
 
-            var cheapBooks = books.FindAll(IsCheaperThan10Dollars);
+            //var cheapBooks = books.FindAll(IsCheaperThan10Dollars);
+            var cheapBooks = books.FindAll(book => book.Price < 10);
+            // with the Lambda Expression we get the same results
+            // with less code (we no longer need IsCheaperThan10Dollars method)
+
 
             foreach (var book in cheapBooks)
             {
