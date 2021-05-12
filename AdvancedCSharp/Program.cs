@@ -10,6 +10,26 @@ namespace AdvancedCSharp
     {
         static void Main(string[] args)
         {
+            var books = new BookRepository().GetBooks();
+
+            var cheapBooks = books.FindAll(IsCheaperThan10Dollars);
+
+            foreach (var book in cheapBooks)
+            {
+                Console.WriteLine(book.Title);
+            }
+            Console.ReadLine();
+        }
+
+        // Predicate delegate method (returns a bool)
+        // returns true if the given condition is satisfied
+        static bool IsCheaperThan10Dollars(Book book)
+        {
+            return book.Price < 10;
+        }
+
+        static void RunSimpleLambdaExpressionMethods()
+        {
             // args => expression
             // number => number*number
             // Func<int, int> square = Square; ... Can also be ran as...
