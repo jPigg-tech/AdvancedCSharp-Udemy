@@ -15,5 +15,13 @@ namespace AdvancedCSharp
     // and code is more readable
     class LambdaExpressions
     {
+        // args => expression 
+        // number => number*number
+        // We need to assign this ^ to a delegate
+
+        
+            
+
     }
+    
 }

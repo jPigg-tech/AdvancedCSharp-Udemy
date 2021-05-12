@@ -10,6 +10,23 @@ namespace AdvancedCSharp
     {
         static void Main(string[] args)
         {
+            // args => expression
+            // number => number*number
+            // Func<int, int> square = Square; ... Can also be ran as...
+
+            Func<int, int> square = number => number * number;
+
+            Console.WriteLine(square(5));
+            Console.ReadKey();
+            
+        }
+        static int Square(int number)
+        {
+            return number*number;
+        }
+
+        static void RunDelegateClass()
+        {
             var processor = new PhotoProcessor();
             var filters = new PhotoFilters();
             // PhotoProcessor.PhotoFilterHandler filterHandler = filters.ApplyBrightness;
