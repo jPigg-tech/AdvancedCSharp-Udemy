@@ -16,7 +16,6 @@ namespace AdvancedCSharp
     {
 
     }
-
     public class Photo
     {
         public static Photo Load(string path)
@@ -28,6 +27,7 @@ namespace AdvancedCSharp
 
         }
     }
+
     public class PhotoFilters
     {
         // For simplicity I have just used Console.WriteLine
@@ -47,9 +47,14 @@ namespace AdvancedCSharp
 
     public class PhotoProcessor
     {
+        // public delegate void PhotoFilterHandler(Photo photo);
+
+        // The above delegate is a custom delegate just to demonstrate
+        // that you can create custom delegates but the Action and Func
+        // delegates are cleaner and can usually be used
         public void Process(string path, Action<Photo> filterHandler)
         {
-            var photo = new Photo.Load(path);
+            var photo = Photo.Load(path);            
 
             filterHandler(photo);
 
