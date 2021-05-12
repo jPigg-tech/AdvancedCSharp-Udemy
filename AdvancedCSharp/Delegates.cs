@@ -45,5 +45,15 @@ namespace AdvancedCSharp
         }
     }
 
-    
+    public class PhotoProcessor
+    {
+        public void Process(string path, Action<Photo> filterHandler)
+        {
+            var photo = new Photo.Load(path);
+
+            filterHandler(photo);
+
+            photo.Save();
+        }
+    }
 }
