@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Delegates.cs" />
+    <Compile Include="Events.cs" />
     <Compile Include="Generics.cs" />
     <Compile Include="LambdaExpressions.cs" />
     <Compile Include="Program.cs" />
